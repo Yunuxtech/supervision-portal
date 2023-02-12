@@ -44,7 +44,7 @@ $data = mysqli_fetch_assoc($res);
                     <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
-                  <h6 class="ellipsis font-weight-normal">David Grey
+                  <h6 class="ellipsis font-weight-normal">David ---
                   </h6>
                   <p class="font-weight-light small-text text-muted mb-0">
                     The meeting is cancelled
