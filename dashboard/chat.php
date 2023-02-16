@@ -219,7 +219,7 @@ checklogin();
                         } else {
                         ?>
                           <div class="incoming_msg">
-                            <div class="incoming_msg_img"> <img src="../images/user-profile.png" alt="sunil"> </div>
+                            <!-- <div class="incoming_msg_img"> <img src="../images/user-profile.png" alt="sunil"> </div> -->
                             <div class="received_msg">
                               <div class="received_withd_msg">
                                 <p><?php echo htmlentities($data["message"]); ?></p>

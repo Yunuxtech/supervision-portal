@@ -121,7 +121,7 @@ checklogin();
                                       <tr>
                                         <th>Log Id</th>
                                         <th>Comment</th>
-                                        <th>Document</th>
+                                        <th>File</th>
                                         <th>Date</th>
                                       </tr>
                                     </thead>
@@ -134,7 +134,9 @@ checklogin();
                                         <tr>
                                           <td>#<?php echo $count; ?></td>
                                           <td><?php echo $row["comment"]; ?></td>
-                                          <td><?php echo $row["document"];   ?></td>
+                                          <td>
+                                            <a href="./Admin_Form_Handler/download.php?tag=<?php echo $row["document"]; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row["document"];   ?></a>
+                                          </td>
                                           <td><?php echo $row["created_at"]; ?></td>
 
                                         </tr>
@@ -194,7 +196,10 @@ checklogin();
                                         <tr>
                                           <td>#<?php echo $i; ?></td>
                                           <td><?php echo $row1["comment"]; ?></td>
-                                          <td><?php echo $row1["document"];   ?></td>
+                                          <td>
+                                            <a href="./Admin_Form_Handler/download.php?download=<?php echo $row1["document"]; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row1["document"];   ?></a>
+
+                                          </td>
                                           <td><?php echo $row1["created_at"]; ?></td>
                                           <td>
                                             <?php

@@ -24,9 +24,10 @@ checklogin();
   <!-- endinject -->
   <link rel="shortcut icon" href="images/supervisor1.jpg" />
 </head>
+
 <body>
   <div class="container-scroller">
-  
+
     <!-- partial:partials/_navbar.html -->
     <?php include("./includes/nav.php"); ?>
     <!-- partial -->
@@ -36,7 +37,7 @@ checklogin();
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-          
+
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="d-flex justify-content-between flex-wrap">
@@ -49,37 +50,48 @@ checklogin();
                     <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
-          
+
           <div class="row">
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                  <?php
+                  $id = $_SESSION["AdminLogin"];
+                  $sql  = "SELECT * FROM `assigned_student_tbl` WHERE supervisor_id = '$id'";
+                  $query = mysqli_query($con, $sql);
+                  $num = mysqli_num_rows($query);
+                  ?>
                   <p class="card-title">Student(s)</p>
                   <i class="mdi mdi-account" style="font-size: 70px; margin: auto;"></i>
-                  <h3># 248</h3>
+                  <h3># <?php echo $num;  ?></h3>
                 </div>
               </div>
             </div>
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
+                  <?php
+                  $sql1 = "SELECT * FROM `review_logs_tbl` WHERE supervisor = '$id'";
+                  $query1 = mysqli_query($con, $sql1);
+                  $num1 = mysqli_num_rows($query1);
+                  ?>
                   <p class="card-title">Review Logs</p>
-                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto;"></i> 
-                  <h3># 409</h3>                 
+                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto;"></i>
+                  <h3># <?php echo $num1;  ?></h3>
                 </div>
               </div>
             </div>
-            
+
           </div>
-          
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-       <?php include("./includes/footer.php"); ?>
+        <?php include("./includes/footer.php"); ?>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -112,4 +124,3 @@ checklogin();
 </body>
 
 </html>
-

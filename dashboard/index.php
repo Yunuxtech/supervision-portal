@@ -2,6 +2,7 @@
 
 error_reporting(0);
 include("../Auth_Handler/checklogin.php");
+include("../DB/db_connection.php");
 checklogin();
 ?>
 <!DOCTYPE html>
@@ -60,7 +61,13 @@ checklogin();
                 <div class="card-body">
                   <p class="card-title">Uploads</p>
                   <i class="mdi mdi-auto-upload" style="font-size: 70px; margin: auto;"></i>
-                  <h3># 248</h3>
+                  <?php 
+                  $id = $_SESSION["login"];  
+                  $sql  = "SELECT * FROM `student_upload_tbl` WHERE student_id = '$id'";
+                  $query = mysqli_query($con, $sql);
+                  $num = mysqli_num_rows($query);
+                  ?>
+                  <h3># <?php echo $num;  ?></h3>
                 </div>
               </div>
             </div>
@@ -68,8 +75,14 @@ checklogin();
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">Review Logs</p>
+                  <?php 
+                  
+                  $sql1 = "SELECT * FROM `review_logs_tbl` WHERE student_id = '$id'";
+                  $query1 = mysqli_query($con, $sql1);
+                  $num1 = mysqli_num_rows($query1);
+                  ?>
                   <i class="mdi mdi-history" style="font-size: 70px; margin: auto;"></i> 
-                  <h3># 409</h3>                 
+                  <h3># <?php echo $num1;  ?></h3>                 
                 </div>
               </div>
             </div>

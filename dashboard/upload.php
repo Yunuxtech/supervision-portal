@@ -139,7 +139,9 @@ checklogin();
                                         <tr>
                                           <td>#<?php echo $count; ?></td>
                                           <td><?php echo $row["comment"]; ?></td>
-                                          <td><?php echo $row["document"];   ?></td>
+                                          <td>
+                                            <a href="../Form_Handler/download.php?tag=<?php echo $row["document"]; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row["document"];   ?></a>
+                                          </td>
                                           <td><?php echo $row["created_at"]; ?></td>
                                           <td>
                                             <?php

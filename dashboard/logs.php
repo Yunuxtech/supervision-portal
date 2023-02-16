@@ -41,6 +41,12 @@ checklogin();
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
+                <?php
+                if (isset($_SESSION["msg"])) {
+                  echo $_SESSION["msg"];
+                }
+                unset($_SESSION["msg"]);
+                ?>
                 <h4 class="card-title">Review Logs</h4>
                 <?php
 
@@ -73,20 +79,34 @@ checklogin();
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td class="py-1">
-                            #960
-                          </td>
-                          <td>
-                            Make all necessary corrections on it.
-                          </td>
-                          <td title="Click to Download">
-                            ------
-                          </td>
-                          <td>
-                            12-01-2023
-                          </td>
-                        </tr>
+                        <?php
+                        $count = 1;
+                        while ($data = mysqli_fetch_assoc($query)) {
+                        ?>
+                          <tr>
+                            <td class="py-1">
+                              #<?php echo $count;  ?>
+                            </td>
+                            <td>
+                              <?php echo $data["comment"];  ?>
+                            </td>
+                            <td>
+                              <a href="../Form_Handler/download.php?download=<?php echo $data["document"]; ?>" class="nav-link" title="Click to Download" style="color:black"><?php echo $data["document"];  ?></a>
+
+                            </td>
+                            <td>
+                              <?php echo $data["created_at"];  ?>
+                            </td>
+                          </tr>
+
+                        <?php
+                          $count++;
+                        }
+
+
+
+                        ?>
+
                       </tbody>
                     </table>
                   </div>
