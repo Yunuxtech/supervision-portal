@@ -60,7 +60,7 @@ checklogin();
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">Uploads</p>
-                  <i class="mdi mdi-auto-upload" style="font-size: 70px; margin: auto;"></i>
+                  <i class="mdi mdi-auto-upload" style="font-size: 70px; margin: auto; color:cornflowerblue"></i>
                   <?php 
                   $id = $_SESSION["login"];  
                   $sql  = "SELECT * FROM `student_upload_tbl` WHERE student_id = '$id'";
@@ -81,7 +81,7 @@ checklogin();
                   $query1 = mysqli_query($con, $sql1);
                   $num1 = mysqli_num_rows($query1);
                   ?>
-                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto;"></i> 
+                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto; color:cornflowerblue"></i> 
                   <h3># <?php echo $num1;  ?></h3>                 
                 </div>
               </div>

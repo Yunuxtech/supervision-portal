@@ -8,7 +8,7 @@ if (isset($_POST["send-message"])) {
     $supervisorId = $_POST["supervisorId"];
     $message = mysqli_real_escape_string($con, validate($_POST["message"]));
 
-    $sql = "INSERT INTO `chat_tbl`(`sender_id`, `receiver_id`, `message`) VALUES ('$studentId','$supervisorId','$message')";
+    $sql = "INSERT INTO `chat_tbl`(`sender_id`, `receiver_id`, `message`,`status`) VALUES ('$studentId','$supervisorId','$message','0')";
     $result = mysqli_query($con, $sql);
     if ($result) {
         header("location: ../dashboard/chat.php");

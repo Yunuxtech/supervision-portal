@@ -135,7 +135,7 @@ checklogin();
                                           <td>#<?php echo $count; ?></td>
                                           <td><?php echo $row["comment"]; ?></td>
                                           <td>
-                                            <a href="./Admin_Form_Handler/download.php?tag=<?php echo $row["document"]; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row["document"];   ?></a>
+                                            <a href="./Admin_Form_Handler/download.php?tag=<?php echo $row["document"]; ?>&id=<?php echo $studentId; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row["document"];   ?></a>
                                           </td>
                                           <td><?php echo $row["created_at"]; ?></td>
 
@@ -197,7 +197,7 @@ checklogin();
                                           <td>#<?php echo $i; ?></td>
                                           <td><?php echo $row1["comment"]; ?></td>
                                           <td>
-                                            <a href="./Admin_Form_Handler/download.php?download=<?php echo $row1["document"]; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row1["document"];   ?></a>
+                                            <a href="./Admin_Form_Handler/download.php?file=<?php echo $row1["document"]; ?>&id=<?php echo $studentId; ?>" class="nav-link" title="click to download" style="color:black"><?php echo $row1["document"];   ?></a>
 
                                           </td>
                                           <td><?php echo $row1["created_at"]; ?></td>

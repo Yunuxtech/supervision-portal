@@ -31,7 +31,7 @@ include_once("./Auth_Handler_Admin/auth.php");
               <!-- <div class="brand-logo">
                 <img src="images/logo.svg" alt="logo">
               </div> -->
-              <h4>Welcome back!</h4>
+              <h4>Welcome back! Supervisor</h4>
               <?php
               if (isset($_SESSION["msg"])) {
                 echo $_SESSION["msg"];

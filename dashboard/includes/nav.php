@@ -11,7 +11,7 @@ $data = mysqli_fetch_assoc($res);
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
   <div class="navbar-brand-wrapper d-flex justify-content-center">
     <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-      <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
+      <a class="navbar-brand brand-logo" href="index.html" style="font-weight:bold;color:cornflowerblue">Supervision Portal</a>
       <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo" /></a>
       <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
         <span class="mdi mdi-sort-variant"></span>
@@ -35,46 +35,58 @@ $data = mysqli_fetch_assoc($res);
       <li class="nav-item dropdown me-1">
         <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
           <i class="mdi mdi-message-text mx-0"></i>
-          <span class="count"></span>
+          <?php
+          $sl = "SELECT * FROM `chat_tbl` WHERE receiver_id = '$userId' AND status = '0'";
+          $re = mysqli_query($con, $sl);
+          $num =  mysqli_num_rows($re);
+          if ($num >= 1) {
+          ?>
+            <span class="count"></span>
+          <?php
+          } else {
+          ?>
+            <span class=""></span>
+          <?php
+          }
+
+
+          ?>
+
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-          <a class="dropdown-item">
-            <div class="item-thumbnail">
-              <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
-            </div>
-            <div class="item-content flex-grow">
-              <h6 class="ellipsis font-weight-normal">David Grey
-              </h6>
+          <?php
+          if ($num >= 1) {
+            while ($rec = mysqli_fetch_assoc($re)) {
+          ?>
+              <a class="dropdown-item" href="./chat.php">
+
+                <div class="">
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    <?php echo $rec["message"]; ?> <br>
+                    <span style="font-size:13px"><?php echo $rec["created_at"]; ?></span>
+                  </p>
+                </div>
+              </a>
+
+            <?php
+            }
+          } else {
+            echo '<a class="dropdown-item">
+            <div class="">
               <p class="font-weight-light small-text text-muted mb-0">
-                The meeting is cancelled
+                No Unread Messages...
               </p>
             </div>
-          </a>
-          <a class="dropdown-item">
-            <div class="item-thumbnail">
-              <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-            </div>
-            <div class="item-content flex-grow">
-              <h6 class="ellipsis font-weight-normal">Tim Cook
-              </h6>
-              <p class="font-weight-light small-text text-muted mb-0">
-                New product launch
-              </p>
-            </div>
-          </a>
-          <a class="dropdown-item">
-            <div class="item-thumbnail">
-              <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-            </div>
-            <div class="item-content flex-grow">
-              <h6 class="ellipsis font-weight-normal"> Johnson
-              </h6>
-              <p class="font-weight-light small-text text-muted mb-0">
-                Upcoming board meeting
-              </p>
-            </div>
-          </a>
+          </a>';
+            ?>
+          <?php
+          }
+
+
+          ?>
+
+
         </div>
       </li>
       <li class="nav-item dropdown me-4">
@@ -137,7 +149,7 @@ $data = mysqli_fetch_assoc($res);
           </a>
           <a class="dropdown-item">
             <i class="mdi mdi-logout text-primary"></i>
-            Logout 
+            Logout
           </a>
         </div>
       </li>

@@ -66,7 +66,7 @@ checklogin();
                   $num = mysqli_num_rows($query);
                   ?>
                   <p class="card-title">Student(s)</p>
-                  <i class="mdi mdi-account" style="font-size: 70px; margin: auto;"></i>
+                  <i class="mdi mdi-account" style="font-size: 70px; margin: auto; color:cornflowerblue"></i>
                   <h3># <?php echo $num;  ?></h3>
                 </div>
               </div>
@@ -80,7 +80,7 @@ checklogin();
                   $num1 = mysqli_num_rows($query1);
                   ?>
                   <p class="card-title">Review Logs</p>
-                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto;"></i>
+                  <i class="mdi mdi-history" style="font-size: 70px; margin: auto; color:cornflowerblue"></i>
                   <h3># <?php echo $num1;  ?></h3>
                 </div>
               </div>
