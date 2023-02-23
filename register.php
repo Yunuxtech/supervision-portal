@@ -43,14 +43,14 @@ include_once("./Auth_Handler/auth.php");
               <form class="pt-3" action="./Auth_Handler/auth.php" method="post">
 
                 <div class="form-group">
-                  <label>Username</label>
+                  <label>Full Name</label>
                   <div class="input-group">
                     <div class="input-group-prepend bg-transparent">
                       <span class="input-group-text bg-transparent border-right-0">
                         <i class="mdi mdi-account-outline text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" name="username" placeholder="Username" required>
+                    <input type="text" class="form-control form-control-lg border-left-0" name="username" placeholder="Full Name" required>
                   </div>
                 </div>
                 <div class="form-group">

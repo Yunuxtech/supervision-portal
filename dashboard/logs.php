@@ -4,6 +4,13 @@ error_reporting(0);
 include("../Auth_Handler/checklogin.php");
 include("../DB/db_connection.php");
 checklogin();
+
+$studentId = $_SESSION["login"];
+
+if (isset($_GET["view"])) {
+  $sq = "UPDATE `review_logs_tbl` SET `status`='1' WHERE student_id = '$studentId'";
+  mysqli_query($con, $sq);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

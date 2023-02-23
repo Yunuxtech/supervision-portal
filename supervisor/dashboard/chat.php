@@ -2,7 +2,14 @@
 
 error_reporting(0);
 include("../Auth_Handler_Admin/checklogin.php");
+include("../../DB/db_connection.php");
 checklogin();
+$supervisorId = $_SESSION["AdminLogin"];
+$studentId = $_GET["chatId"];
+if (isset($_GET["view"])) {
+  $sq = "UPDATE `chat_tbl` SET `status`='1' WHERE receiver_id = '$supervisorId' AND sender_id = '$studentId'";
+  mysqli_query($con, $sq);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

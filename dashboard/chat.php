@@ -5,6 +5,13 @@ include("../Auth_Handler/checklogin.php");
 include("../DB/db_connection.php");
 
 checklogin();
+$studentId = $_SESSION["login"];
+
+if (isset($_GET["view"])) {
+  $sq = "UPDATE `chat_tbl` SET `status`='1' WHERE receiver_id = '$studentId'";
+  mysqli_query($con, $sq);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,6 +162,7 @@ checklogin();
             <div class="card">
               <div class="card-body">
                 <?php
+
                 if (isset($_SESSION["msg"])) {
                   echo $_SESSION["msg"];
                 }

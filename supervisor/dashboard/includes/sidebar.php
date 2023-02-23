@@ -7,9 +7,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./supervisor-application.php">
-              <i class="mdi mdi-application menu-icon"></i>
-              <span class="menu-title">Applications</span>
+            <a class="nav-link" href="./profile.php">
+              <i class="mdi mdi-account menu-icon"></i>
+              <span class="menu-title">Profile</span>
             </a>
           </li>
           <li class="nav-item">

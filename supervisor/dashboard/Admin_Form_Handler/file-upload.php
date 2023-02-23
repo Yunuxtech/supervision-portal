@@ -17,7 +17,7 @@ if (isset($_POST["upload"])) {
 
   // TO move the uploaded file to specific location
   move_uploaded_file($file_tmp, $uploads_dir . '/' . $filename);
-  $sql = "INSERT INTO `review_logs_tbl`(`student_id`, `supervisor`, `comment`, `document`) VALUES ('$studentId','$id','$comment','$filename')";
+  $sql = "INSERT INTO `review_logs_tbl`(`student_id`, `supervisor`, `comment`, `document`,`status`) VALUES ('$studentId','$id','$comment','$filename','0')";
   $result = mysqli_query($con, $sql);
   if ($result) {
 

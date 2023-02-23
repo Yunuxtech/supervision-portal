@@ -11,8 +11,8 @@ $data = mysqli_fetch_assoc($res);
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html" style="font-weight: bold; color:cornflowerblue">Supervision Portal</a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/l" alt="logo"/></a>
+          <a class="navbar-brand brand-logo" href="index.php" style="font-weight: bold; font-family:Brush Script MT, cursive">Supervision Portal</a>
+          <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/l" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -39,11 +39,11 @@ $data = mysqli_fetch_assoc($res);
               <span class="nav-profile-name"><?php echo $data["username"]; ?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="mdi mdi-settings text-primary"></i>
-                Settings
+              <a class="dropdown-item" href="./profile.php">
+                <i class="mdi mdi-account text-primary"></i>
+                Profile
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="../Auth/logout.php">
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout
               </a>

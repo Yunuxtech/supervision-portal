@@ -4,6 +4,12 @@ error_reporting(0);
 include("../Auth_Handler_Admin/checklogin.php");
 include("../../DB/db_connection.php");
 checklogin();
+$studentId = $_GET["uploadId"];
+$supervisorId = $_SESSION["AdminLogin"];
+if (isset($_GET["view"])) {
+  $sq = "UPDATE `student_upload_tbl` SET `status`='1' WHERE student_id = '$studentId' AND supervisor = '$supervisorId'";
+  mysqli_query($con, $sq);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
