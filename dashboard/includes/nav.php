@@ -63,7 +63,7 @@ $data = mysqli_fetch_assoc($res);
 
                 <div class="">
                   <p class="font-weight-light small-text text-muted mb-0">
-                    <?php echo $rec["message"]; ?> <br>
+                    <?php echo substr($rec["message"], 0, 25). "..."; ?> <br>
                     <span style="font-size:13px"><?php echo $rec["created_at"]; ?></span>
                   </p>
                 </div>

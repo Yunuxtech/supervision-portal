@@ -26,8 +26,8 @@ if(isset($_POST["update"])){
 
 if(isset($_POST["change"])){
     $id = mysqli_real_escape_string($con, validate($_POST["id"])) ;
-    $password = mysqli_real_escape_string($con, validate($_POST["password"])) ;
-    $newPassword = mysqli_real_escape_string($con,validate($_POST["newPassword"]) );
+    $password = md5(mysqli_real_escape_string($con, validate($_POST["password"]))) ;
+    $newPassword = md5(mysqli_real_escape_string($con,validate($_POST["newPassword"]) )) ;
     
     $sql = "SELECT * FROM `admin_tbl` WHERE id = '$id'";
     $res = mysqli_query($con, $sql);

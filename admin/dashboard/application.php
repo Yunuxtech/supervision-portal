@@ -11,7 +11,7 @@ checklogin();
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Supervisor | Application</title>
+  <title>Admin | Application</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
@@ -134,7 +134,7 @@ checklogin();
                                     $res1 = mysqli_query($con, $sql1);
                                     while ($row1 = mysqli_fetch_assoc($res1)) {
                                     ?>
-                                      <option value="<?php echo $row1["userId"]; ?>"><?php echo $row1["regNo"]; ?> - <?php echo $row1["department"]; ?></option>
+                                      <option value="<?php echo $row1["userId"]; ?>"><?php echo $row1["regNo"]; ?></option>
 
                                     <?php
                                     }

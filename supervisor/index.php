@@ -19,7 +19,7 @@ include_once("./Auth_Handler_Admin/auth.php");
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/supervisor1.jpg" />
 </head>
 <body>
   <div class="container-scroller">

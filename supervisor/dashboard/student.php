@@ -58,9 +58,7 @@ checklogin();
                         <th>
                           Topic
                         </th>
-                        <th>
-                          Department
-                        </th>
+                        
                         <th>
                           Action
                         </th>
@@ -76,9 +74,7 @@ checklogin();
                           <td class="py-1">
                             <?php echo $data["regNo"]; ?>
                           </td>
-                          <td>
-                            <?php echo $data["department"]; ?>
-                          </td>
+                          
                           <td title="">
                             <?php echo $data["topic"]; ?>
                           </td>
